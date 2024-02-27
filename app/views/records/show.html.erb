@@ -1,0 +1,30 @@
+<p></p>
+<div class= "d-flex justify-content-center"><h1>Record <%= @record.json_data[:objectData][:objectCn] %></h1></div>
+<p></p>
+
+<dl class="row">
+  <dt class="col-sm-4">Load date</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:firActualDate] %></dd>
+    
+  <dt class="col-sm-4">Cadastrial number</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:objectData][:objectCn] %></dd>
+
+  <dt class="col-sm-4">Creation cad.number date</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:parcelData][:dateCreate] %></dd>
+
+  <dt class="col-sm-4">Region</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:objectData][:objectAddress][:region] %></dd>
+
+  <dt class="col-sm-4">Address</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:objectData][:addressNote] %></dd>
+
+  <dt class="col-sm-4">Area</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:parcelData][:areaValue] %> кв. м</dd>
+
+  <dt class="col-sm-4">Cadastrial value, rub</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:parcelData][:cadCost] %></dd>
+
+  <dt class="col-sm-4">Permitted issues</dt>
+  <dd class="col-sm-8"><%= @record.json_data[:parcelData][:utilByDoc] %></dd>
+</dl>
+<div class= "d-flex justify-content-end">  <%= link_to "Back", root_url %></div>

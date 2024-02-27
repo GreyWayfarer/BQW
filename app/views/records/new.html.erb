@@ -1,0 +1,17 @@
+<p></p>
+<div class= "d-flex align-items-center justify-content-center"><h1>Adding a new record</h1></div>
+<p></p>
+<div class= "d-flex align-items-center justify-content-center">
+<%= form_with model: @record, url: add_record_path do |form| %>
+    <% if @record.errors.any? %>
+        <div class="alert alert-danger">
+        <% @record.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        </div>
+    <% end %>
+    <%= form.label :cadastrial_number %>
+    <%= form.text_field :cadnumber, placeholder: "54:32:0010641:12" %>
+    <%= form.submit "Add record" %>
+<% end %>
+</div>

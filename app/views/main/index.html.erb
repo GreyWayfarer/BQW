@@ -1,0 +1,28 @@
+<p></p>
+<div class= "d-flex justify-content-center"><h1>Records</h1></div>
+
+<table class="sortable">
+  <thead>
+    <tr>
+      <th><div class= "d-flex justify-content-center text-truncate">Cadastrial number</div></th>
+      <th><div class= "d-flex justify-content-center">Address</div></th>
+      <th><div class= "d-flex justify-content-center">Updated at</div></th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+<p></p>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.cadnumber %></td>
+        <td><%= record.json_data[:objectData][:addressNote] %></td>
+        <td><%= record.updated_at %></td>
+        <td>
+          <%= link_to "Show", record %>
+          <%= link_to "Delete", record, method: :destroy, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
